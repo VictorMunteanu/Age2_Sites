@@ -1,12 +1,11 @@
 const productDetails = [
     {
-      name: "MacBook Pro",
+      name: "MacBook Pro 13.3`",
       price: 1500,
       imageUrl: "IMG/1.1.png",
       qty: 10,
-      heading: "Wireless Noise Cancelling Earphones",
       des:
-      "AirPods Pro have been designed to deliver active Noise Cancellation for immersive sound. Transparancy mode so much can hear your surroundings." 
+      "APPLE MacBook Pro with Touch Bar (2020) Silver, 13.3 Retina IPS (Intel® Quad Core™ i5 2.0-3.8GHz, 16GB RAM, 1.0TB SSD, Intel Iris Plus Graphics, 4xTB3, WiFi-AC/BT5.0, 10 hours, 720p Camera, Backlit KB, RUS, macOS, 1.4kg)" 
     },
     
     {
@@ -14,9 +13,8 @@ const productDetails = [
       price: 2500,
       imageUrl: "IMG/1.2.png",
       qty: 15,
-      heading: "You’ve never seen a watch like this",
       des:
-      "The most advanced Apple Watch yet, featuring the Always-On Retina display, the ECG app, international emergency calling, fall detection and a built‑in compass." 
+      "APPLE MacBook Pro with Touch Bar (2019) Space Gray, 16` Retina IPS (Intel® Eight Core™ i9 2.3-4.8GHz, 16GB RAM, 1TB SSD, Radeon Pro 5500M 4GB, 4xTB3, WiFi-AC/BT5.0, 10 hours, 720p Camera, Backlit KB, RUS, macOS, 2.0kg)" 
     },
     
     {
@@ -24,9 +22,8 @@ const productDetails = [
       price: 1100,
       imageUrl: "IMG/1.3.png",
       qty: 20,
-      heading: "The best for the brightest",
       des:
-      "Designed for those who defy limits and change the world, the new MacBook Pro is by far the most powerful notebook we’ve ever made. it’s the ultimate pro notebook for the ultimate user." 
+      "APPLE MacBook Air (2020) Space Gray, 13.3` WQXGA IPS (Intel® Core i5-1030NG7, 8GB RAM, 512GB SSD, Intel Iris Plus, USB-C x 2, TB3, WiFi-AC/BT5.0, 12 hours, 720p Camera, Backlit KB, RUS, macOS, 1.29kg)" 
     },
     
     {
@@ -34,9 +31,8 @@ const productDetails = [
       price: 1200,
       imageUrl: "IMG/1.4.png",
       qty: 35,
-      heading: "Pro cameras. Pro display. Pro performance",
       des:
-      "A mind‑blowing chip that doubles down on machine learning and pushes the boundaries of what a smartphone can do. Welcome to the first iPhone powerful enough to be called Pro." 
+      "NB Apple MacBook Air MGNE3UA/A Gold (M1 8Gb 512Gb), 13.3' 2560x1600 Retina, Apple M1 8-core GPU, 8Gb, 512Gb, Mac OS Big Sur, RU" 
     },
     
     {
@@ -44,9 +40,8 @@ const productDetails = [
       price: 1100,
       imageUrl: "IMG/2.1.png",
       qty: 25,
-      heading: "Your next computer is not a computer",
       des:
-      "It’s a magical piece of glass. It’s so fast most PC laptops can’t catch up. And you can use it with touch, pencil, keyboard and now trackpad. It’s the new iPad Pro." 
+      "Apple iPhone 12 Pro Max 128GB 5G Gold" 
     },
 
     {
@@ -54,9 +49,8 @@ const productDetails = [
       price: 500,
       imageUrl: "IMG/2.2.png",
       qty: 10,
-      heading: "Wireless Noise Cancelling Earphones",
       des:
-      "AirPods Pro have been designed to deliver active Noise Cancellation for immersive sound. Transparancy mode so much can hear your surroundings." 
+      "Apple iPhone SE (2020) 64GB White, 4.7` Retina IPS LCD display, Apple A13 Bionic chipset, 1821 mAh battery 3 GB RAM, Ion-strengthened glass." 
     },
     
     {
@@ -64,9 +58,8 @@ const productDetails = [
       price: 850,
       imageUrl: "IMG/2.3.png",
       qty: 15,
-      heading: "You’ve never seen a watch like this",
       des:
-      "The most advanced Apple Watch yet, featuring the Always-On Retina display, the ECG app, international emergency calling, fall detection and a built‑in compass." 
+      "Apple iPhone 12 256GB 5G Green" 
     },
     
     {
@@ -74,9 +67,8 @@ const productDetails = [
       price: 750,
       imageUrl: "IMG/2.4.png",
       qty: 20,
-      heading: "The best for the brightest",
       des:
-      "Designed for those who defy limits and change the world, the new MacBook Pro is by far the most powerful notebook we’ve ever made. it’s the ultimate pro notebook for the ultimate user." 
+      "Apple iPhone 11, 128GB, Yellow, 6.1`, 828x1792 Retina IPS, Apple A13 Bionic 2,49GHz, 6 Cores (2x Monsoon + 4x Mistral cores), GPU 4 Cores, 4GB RAM, 128GB ROM, Camera Dual 12/12MP, Front 12MP, BT5.0, GPS, NFC, IP68, Li-Ion 3110 mAh battery, 194g, iOS 13" 
     },
     
     {
@@ -84,9 +76,8 @@ const productDetails = [
       price: 1700,
       imageUrl: "IMG/3.1.png",
       qty: 35,
-      heading: "Pro cameras. Pro display. Pro performance",
       des:
-      "A mind‑blowing chip that doubles down on machine learning and pushes the boundaries of what a smartphone can do. Welcome to the first iPhone powerful enough to be called Pro." 
+      "Apple iPad Pro 11 (2020) 4G 1TB, Space Gray" 
     },
     
     {
@@ -94,19 +85,17 @@ const productDetails = [
       price: 600,
       imageUrl: "IMG/3.2.png",
       qty: 25,
-      heading: "Your next computer is not a computer",
       des:
-      "It’s a magical piece of glass. It’s so fast most PC laptops can’t catch up. And you can use it with touch, pencil, keyboard and now trackpad. It’s the new iPad Pro." 
+      "Apple iPad (2019) 10.2 32Gb Wi-Fi, Silver" 
     },
 
     {
-      name: "iPad Pro",
+      name: "iPad Air",
       price: 1200,
       imageUrl: "IMG/3.3.png",
       qty: 10,
-      heading: "Wireless Noise Cancelling Earphones",
       des:
-      "AirPods Pro have been designed to deliver active Noise Cancellation for immersive sound. Transparancy mode so much can hear your surroundings." 
+      "Apple iPad Air 10.9-inch LTE 256GB (2020) Green" 
     },
     
     {
@@ -114,9 +103,8 @@ const productDetails = [
       price: 1100,
       imageUrl: "IMG/3.4.png",
       qty: 15,
-      heading: "You’ve never seen a watch like this",
       des:
-      "The most advanced Apple Watch yet, featuring the Always-On Retina display, the ECG app, international emergency calling, fall detection and a built‑in compass." 
+      "Apple iPad Pro 12.9 (2020) WiFi 256GB, Silve" 
     },
     
     {
@@ -124,9 +112,8 @@ const productDetails = [
       price: 700,
       imageUrl: "IMG/4.1.png",
       qty: 20,
-      heading: "The best for the brightest",
       des:
-      "Designed for those who defy limits and change the world, the new MacBook Pro is by far the most powerful notebook we’ve ever made. it’s the ultimate pro notebook for the ultimate user." 
+      "Apple Watch Series 6 GPS, 44mm Blue Aluminum Case with Deep Navy Sport Band, M00J3 GPS" 
     },
     
     {
@@ -134,9 +121,8 @@ const productDetails = [
       price: 600,
       imageUrl: "IMG/4.2.png",
       qty: 35,
-      heading: "Pro cameras. Pro display. Pro performance",
       des:
-      "A mind‑blowing chip that doubles down on machine learning and pushes the boundaries of what a smartphone can do. Welcome to the first iPhone powerful enough to be called Pro." 
+      "Apple Watch SE LTE 40mm Silver Aluminium, White Sport Band, MYEF2" 
     },
     
     {
@@ -144,9 +130,8 @@ const productDetails = [
       price: 500,
       imageUrl: "IMG/4.3.png",
       qty: 25,
-      heading: "Your next computer is not a computer",
       des:
-      "It’s a magical piece of glass. It’s so fast most PC laptops can’t catch up. And you can use it with touch, pencil, keyboard and now trackpad. It’s the new iPad Pro." 
+      "Apple Watch Nike 5 44mm Silver Aluminium, Pure Platinum Black Nike Sport, MYYH2" 
     },
 
     {
@@ -154,9 +139,8 @@ const productDetails = [
       price: 400,
       imageUrl: "IMG/4.4.png",
       qty: 25,
-      heading: "Your next computer is not a computer",
       des:
-      "It’s a magical piece of glass. It’s so fast most PC laptops can’t catch up. And you can use it with touch, pencil, keyboard and now trackpad. It’s the new iPad Pro." 
+      "Apple Watch 4 40mm Gold Aluminium, Pink Sand Sport Band, MYDN2" 
     }
   ];
       const cartDetails = [];
@@ -331,7 +315,7 @@ function AddBtn() {
   
   //Ui components {
   function Product(product = {}) {
-    let { name, price, imageUrl, heading, des } = product;
+    let { name, price, imageUrl, des } = product;
     return `
   <div class='card'>
     <div class='top-bar'>
@@ -348,7 +332,6 @@ function AddBtn() {
         <button onclick='this.classList.toggle("fav")' class='heart'><i class='fas fa-heart'></i></button>
       </div>
       <div class='wrapper'>
-        <h5>${heading}</h5>
         <p>${des}</p>
       </div>
       <div class='purchase'>
