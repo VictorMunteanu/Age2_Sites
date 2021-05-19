@@ -536,7 +536,7 @@ font-weight: light;
         .invoice .order-details p span {
         font-weight: 600;
         }
-        .btn-ok {
+        .btn-ok, #btn-ok-order {
         position: absolute;
         width: 80%;
         font-size: 1.2rem;
