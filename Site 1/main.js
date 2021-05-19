@@ -344,6 +344,7 @@ function AddBtn() {
   
   function CartItems(cartItem = {}) {
     let { name, price, imgSrc, qty } = cartItem;
+    localStorage.setItem("CartItem", JSON.stringify(this.product));
     return `
   <div class='cart-item'>
     <div class='cart-img'>
@@ -368,7 +369,6 @@ function AddBtn() {
     <li></li>
     </ul>
     <div class='main-cart'>${DisplayProducts()}</div>
-  
     <div class='nav'>
       <button onclick='sideNav(1)'><i class='fas fa-shopping-cart' style='font-size:2rem;'></i></button>
       <span class= 'total-qty'>0</span>

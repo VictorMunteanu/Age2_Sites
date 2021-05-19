@@ -4,14 +4,113 @@ font-size: 16px;
 color: white;
 font-family: "Montserrat", sans-serif;
 }
+
 * {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+
+h2 {
+    font-size: 20px;
+}
+
+body{
+    background: grey;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 50px;
+    color: #fff;
+    background-color: #333;
+    margin-top: 50px;
+    }
+    
+    .footer > * {
+    flex:  1 100%;
+    }
+    
+    .l-footer {
+    margin-right: 1.25em;
+    margin-bottom: 2em;
+    }
+    
+    .l-footer img {
+        height: 100px;
+        width: 140px;
+    }
+
+    h2 {
+    font-weight: 400;
+    font-size: 15px;
+    }
+    
+    .footer ul {
+    list-style: none;
+    padding-left: 0;
+    }
+    
+    .footer li {
+    line-height: 2em;
+    }
+    
+    .footer a {
+    text-decoration: none;
+    }
+    
+    .r-footer {
+    display: flex;
+    flex-flow: row wrap;
+    }
+    
+    .r-footer > * {
+    flex: 1 50%;
+    margin-right: 1.25em;
+    }
+    
+    .box a {
+    color: #999;
+    }
+    
+    .h-box {
+    column-count: 2;
+    column-gap: 1.25em;
+    }
+    
+    .b-footer {
+    text-align: center;
+    color: #999;
+    padding-top: 50px;
+    }
+    
+    .l-footer p {
+    padding-right: 20%;
+    color: #999;
+    }   
+    
+    @media screen and (min-width: 300px) {
+    .r-footer > * {
+    flex: 1;
+    }
+    
+    .features {
+    flex-grow: 2;
+    }
+    
+    .l-footer {
+    flex: 1 0px;
+    }
+    
+    .r-footer {
+    flex: 2 0px;
+    }
+
 div {
 display: flex;
 }
+
 button {
 border: none;
 background: none;
@@ -20,13 +119,14 @@ color: white;
 cursor: pointer;
 transition: 0.5s;
 }
+
 .banner {
 position: relative;
 height: 100vh;
-width: 100vw;
-background-color: yellowgreen;
+width: 99vw;
 overflow: hidden;
 }
+
 .banner .stock-limit {
 position: absolute;
 top: 0;
@@ -41,6 +141,7 @@ height: 180px;
 flex-direction: column;
 display: none;
 }
+
 .banner .stock-limit em {
 position: absolute;
 width: 80%;
@@ -53,6 +154,7 @@ text-align: center;
 font-weight: 600;
 font-size: 1.2rem;
 }
+
 .banner .cover {
 position: absolute;
 width: 100%;
@@ -62,15 +164,18 @@ background: rgba(0, 0, 0, 0.75);
 backdrop-filter: blur(5px);
 display: none;
 }
+
 .fa-shopping-cart {
 position: absolute;
 right: 2rem;
 top: 1.2rem;
 color: black;
 }
+
 .fa-shopping-cart:hover {
 color: white;
 }
+
 .total-qty {
 position: absolute;
 height: 1rem;
@@ -89,6 +194,7 @@ right: 1.5rem;
 -ms-user-select: none;
 user-select: none;
 }
+
 .main-cart {
 position: absolute;
 justify-content: space-evenly;
@@ -99,6 +205,7 @@ margin-left: 5%;
 align-self: center;
 align-items: center;
 }
+
 .card {
 position: relative;
 flex-shrink: 0;
@@ -110,6 +217,7 @@ overflow: hidden;
 box-shadow: 0 7px 5px -5px #4d4b4b;
 transition: 0.5s;
 }
+
 .card .img-container {
 position: absolute;
 height: 185px;
@@ -119,10 +227,12 @@ left: 0;
 right: 0;
 transform: translateY(35px);
 }
+
 .card .img-container img {
 width: 100%;
 align-self: center;
 }
+
 .card .img-container .out-of-stock-cover {
 position: absolute;
 width: 100%;
@@ -132,11 +242,13 @@ justify-content: center;
 align-items: center;
 display: none;
 }
+
 .card .img-container .out-of-stock-cover span {
 font-weight: 900;
 color: rgba(255, 200, 200, 0.75);
 font-size: 1.5rem;
 }
+
 .top-bar {
 transform: translateY(0.5rem);
 width: 100%;
@@ -144,13 +256,16 @@ justify-content: space-between;
 align-items: baseline;
 padding: 0 1rem;
 }
+
 .top-bar .fa-apple {
 font-size: 1.5rem;
 }
+
 .top-bar .stocks {
 font-size: 0.8rem;
 color: lightgreen;
 }
+
 .card .details {
 position: absolute;
 height: 220px;
@@ -163,34 +278,42 @@ padding: 20px;
 bottom: -165px;
 transition: 0.25s;
 }
+
 .card .details .name-fav {
 justify-content: space-between;
 }
+
 .card .details .name-fav strong {
 font-weight: 600;
 }
+
 .fav {
 color: red;
 }
+
 .card .details .wrapper {
 flex-direction: column;
 justify-content: space-between;
 transform: translateY(5px);
 display: none;
 }
+
 .details .wrapper p {
 font-size: 0.9rem;
 padding: 5px 0;
 font-weight: light;
 }
+
 .card .details .purchase {
     width: 100%;
     justify-content: space-between;
     align-items: center;
     }
+    
     .card .details .purchase p {
     font-weight: 500;
     }
+    
     .details .purchase .add-btn {
     border-radius: 20px;
     border: 1px solid white;
@@ -198,21 +321,26 @@ font-weight: light;
     color: white;
     padding: 6px 10px;
     }
+    
     .details .purchase .add-btn:hover {
     background: white;
     color: black;
     }
+    
     .main-cart .card:hover {
     height: 450px;
     width: 260px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
+    
     .main-cart .card:hover .details {
     bottom: 0;
     }
+    
     .main-cart .card:hover .wrapper {
     display: block;
     }
+    
     .side-nav {
     position: absolute;
     background: #010101;
@@ -226,18 +354,21 @@ font-weight: light;
     overflow: hidden;
     transition: 0.5s;
     }
+    
     .side-nav .fa-times {
     position: absolute;
     top: 20px;
     right: 30px;
     font-size: 1.5rem;
     }
+    
     .side-nav h2 {
     align-self: center;
     transform: translateY(1rem);
     font-size: 2rem;
     font-weight: 600;
     }
+    
     .side-nav .cart-items {
     position: absolute;
     width: 90%;
@@ -246,6 +377,7 @@ font-weight: light;
     top: 10%;
     flex-direction: column;
     }
+    
     .side-nav .cart-items .empty-cart {
     margin: auto 0;
     font-size: 2rem;
@@ -253,6 +385,7 @@ font-weight: light;
     text-align: center;
     color: rgba(255, 255, 255, 0.25);
     }
+    
     .side-nav .cart-items .cart-item {
     height: 5rem;
     width: 100%;
@@ -260,24 +393,29 @@ font-weight: light;
     justify-content: space-around;
     border-bottom: 1px solid whitesmoke;
     }
+    
     .side-nav .cart-items .cart-item:hover {
     background: rgba(255, 255, 255, 0.25);
     }
+    
     .side-nav .cart-items .cart-item .cart-img {
     width: 5rem;
     height: 5rem;
     justify-content: center;
     }
+    
     .side-nav .cart-items .cart-item .cart-img img {
     width: 100%;
     align-self: center;
     }
+    
     .side-nav .final {
     position: absolute;
     align-self: flex-end;
     flex-direction: column;
     bottom: 10%;
     }
+    
     .side-nav .final strong {
     align-self: flex-end;
     font-size: 1.2rem;
@@ -285,9 +423,11 @@ font-weight: light;
     margin-right: 20px;
     margin-bottom: 1rem;
     }
+    
     .side-nav .final .action {
     justify-content: space-evenly;
     }
+    
     .side-nav .final .action .btn {
     font-size: 1.2rem;
     padding: 1rem 2rem;
@@ -295,10 +435,12 @@ font-weight: light;
     margin-right: 20px;
     border-radius: 10px;
     }
+    
     .side-nav .final .action .btn:hover {
     color: black;
     box-shadow: inset 20em 0 0 0 white;
     }
+    
     .qty-change {
         justify-content: space-evenly;
         align-items: baseline;
@@ -445,4 +587,5 @@ font-weight: light;
         .main-cart .card {
         margin: 20px auto;
         }
-        }
+    }
+}
