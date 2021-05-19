@@ -1,140 +1,11 @@
-const productDetails = [
-  {
-    name: "MacBook Pro 13.3`",
-    price: 1500,
-    imageUrl: "IMG/1.1.png",
-    qty: 10,
-    des: "APPLE MacBook Pro with Touch Bar (2020) Silver, 13.3 Retina IPS (Intel® Quad Core™ i5 2.0-3.8GHz, 16GB RAM, 1.0TB SSD, Intel Iris Plus Graphics, 4xTB3, WiFi-AC/BT5.0, 10 hours, 720p Camera, Backlit KB, RUS, macOS, 1.4kg)",
-  },
 
-  {
-    name: "MacBook Pro 16`",
-    price: 2500,
-    imageUrl: "IMG/1.2.png",
-    qty: 15,
-    des: "APPLE MacBook Pro with Touch Bar (2019) Space Gray, 16` Retina IPS (Intel® Eight Core™ i9 2.3-4.8GHz, 16GB RAM, 1TB SSD, Radeon Pro 5500M 4GB, 4xTB3, WiFi-AC/BT5.0, 10 hours, 720p Camera, Backlit KB, RUS, macOS, 2.0kg)",
-  },
-
-  {
-    name: "Macbook Air",
-    price: 1100,
-    imageUrl: "IMG/1.3.png",
-    qty: 20,
-    des: "APPLE MacBook Air (2020) Space Gray, 13.3` WQXGA IPS (Intel® Core i5-1030NG7, 8GB RAM, 512GB SSD, Intel Iris Plus, USB-C x 2, TB3, WiFi-AC/BT5.0, 12 hours, 720p Camera, Backlit KB, RUS, macOS, 1.29kg)",
-  },
-
-  {
-    name: "MacBook Air 13.3`",
-    price: 1200,
-    imageUrl: "IMG/1.4.png",
-    qty: 35,
-    des: "NB Apple MacBook Air MGNE3UA/A Gold (M1 8Gb 512Gb), 13.3' 2560x1600 Retina, Apple M1 8-core GPU, 8Gb, 512Gb, Mac OS Big Sur, RU",
-  },
-
-  {
-    name: "iPhone 12 Pro Max",
-    price: 1100,
-    imageUrl: "IMG/2.1.png",
-    qty: 25,
-    des: "Apple iPhone 12 Pro Max 128GB 5G Gold",
-  },
-
-  {
-    name: "iPhone SE",
-    price: 500,
-    imageUrl: "IMG/2.2.png",
-    qty: 10,
-    des: "Apple iPhone SE (2020) 64GB White, 4.7` Retina IPS LCD display, Apple A13 Bionic chipset, 1821 mAh battery 3 GB RAM, Ion-strengthened glass.",
-  },
-
-  {
-    name: "iPhone 12",
-    price: 850,
-    imageUrl: "IMG/2.3.png",
-    qty: 15,
-    des: "Apple iPhone 12 256GB 5G Green",
-  },
-
-  {
-    name: "iPhone 11",
-    price: 750,
-    imageUrl: "IMG/2.4.png",
-    qty: 20,
-    des: "Apple iPhone 11, 128GB, Yellow, 6.1`, 828x1792 Retina IPS, Apple A13 Bionic 2,49GHz, 6 Cores (2x Monsoon + 4x Mistral cores), GPU 4 Cores, 4GB RAM, 128GB ROM, Camera Dual 12/12MP, Front 12MP, BT5.0, GPS, NFC, IP68, Li-Ion 3110 mAh battery, 194g, iOS 13",
-  },
-
-  {
-    name: "iPad Pro",
-    price: 1700,
-    imageUrl: "IMG/3.1.png",
-    qty: 35,
-    des: "Apple iPad Pro 11 (2020) 4G 1TB, Space Gray",
-  },
-
-  {
-    name: "iPad",
-    price: 600,
-    imageUrl: "IMG/3.2.png",
-    qty: 25,
-    des: "Apple iPad (2019) 10.2 32Gb Wi-Fi, Silver",
-  },
-
-  {
-    name: "iPad Air",
-    price: 1200,
-    imageUrl: "IMG/3.3.png",
-    qty: 10,
-    des: "Apple iPad Air 10.9-inch LTE 256GB (2020) Green",
-  },
-
-  {
-    name: "iPad Pro",
-    price: 1100,
-    imageUrl: "IMG/3.4.png",
-    qty: 15,
-    des: "Apple iPad Pro 12.9 (2020) WiFi 256GB, Silve",
-  },
-
-  {
-    name: "Apple Watch 6",
-    price: 700,
-    imageUrl: "IMG/4.1.png",
-    qty: 20,
-    des: "Apple Watch Series 6 GPS, 44mm Blue Aluminum Case with Deep Navy Sport Band, M00J3 GPS",
-  },
-
-  {
-    name: "Apple Watch SE",
-    price: 600,
-    imageUrl: "IMG/4.2.png",
-    qty: 35,
-    des: "Apple Watch SE LTE 40mm Silver Aluminium, White Sport Band, MYEF2",
-  },
-
-  {
-    name: "Apple Watch 5",
-    price: 500,
-    imageUrl: "IMG/4.3.png",
-    qty: 25,
-    des: "Apple Watch Nike 5 44mm Silver Aluminium, Pure Platinum Black Nike Sport, MYYH2",
-  },
-
-  {
-    name: "Apple Watch 4",
-    price: 400,
-    imageUrl: "IMG/4.4.png",
-    qty: 25,
-    des: "Apple Watch 4 40mm Gold Aluminium, Pink Sand Sport Band, MYDN2",
-  },
-];
-const cartDetails = [];
-//----------------------------------------------------------------------------------------------------//
+const cartDetails = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addItem(event) {
   let btnClicked =
     event.parentElement.parentElement.parentElement.parentElement.parentElement;
   let noStocks = btnClicked.getElementsByClassName("out-of-stock-cover")[0];
-  if (noStocks.style.display == "flex") return;
+  if (noStocks.style.display === "flex") return;
   let name = btnClicked.getElementsByClassName("product-name")[0].innerText;
   let price = parseFloat(
     btnClicked
@@ -153,6 +24,7 @@ function addItem(event) {
 
   CartItems(cartItem);
   cartDetails.push(cartItem);
+  localStorage.setItem('cart', JSON.stringify(cartDetails));
   RenderCart();
   CartItemsTotal();
 }
@@ -162,10 +34,10 @@ function removeItem(event) {
   let itemName = btnClicked.getElementsByClassName("name")[0].innerText;
   let productNames = document.getElementsByClassName("product-name");
   cartDetails.forEach((item, i) => {
-    if (itemName == item.name) {
+    if (itemName === item.name) {
       cartDetails.splice(i, 1);
       for (let name of productNames) {
-        if (itemName == name.innerText) {
+        if (itemName === name.innerText) {
           let found = name.parentElement.parentElement;
           SwitchBtns(found);
         }
@@ -185,6 +57,14 @@ function clearCart() {
   CartItemsTotal();
 }
 
+async function loadJSON() {
+  return fetch('products.json').then(response => {
+    return response.json().then(resolved => {
+      return resolved;
+    })
+  });
+}
+
 function qtyChange(event, handler) {
   let btnClicked = event.parentElement.parentElement;
   let isPresent = btnClicked.classList.contains("btn-add");
@@ -195,18 +75,18 @@ function qtyChange(event, handler) {
     : btnClicked.parentElement.getElementsByClassName("name")[0].innerText;
   let productNames = document.getElementsByClassName("product-name");
   for (let name of productNames) {
-    if (itemName == name.innerText) {
+    if (itemName === name.innerText) {
       let productBtn =
         name.parentElement.parentElement.getElementsByClassName(
           "qty-change"
         )[0];
       cartDetails.forEach((item, i) => {
-        if (itemName == item.name) {
-          if (handler == "add" && item.qty < 10) {
+        if (itemName === item.name) {
+          if (handler === "add" && item.qty < 10) {
             item.qty += 1;
             btnClicked.innerHTML = QtyBtn(item.qty);
             productBtn.innerHTML = QtyBtn(item.qty);
-          } else if (handler == "sub") {
+          } else if (handler === "sub") {
             item.qty -= 1;
             btnClicked.innerHTML = QtyBtn(item.qty);
             productBtn.innerHTML = QtyBtn(item.qty);
@@ -246,7 +126,7 @@ function sideNav(handler) {
 }
 
 function buy(handler) {
-  if (cartDetails.length == 0) return;
+  if (cartDetails.length === 0) return;
   sideNav(!handler);
   document.getElementsByClassName("purchase-cover")[0].style.display = handler
     ? "block"
@@ -268,10 +148,12 @@ function order() {
 
 function okay(event) {
   let container = document.getElementsByClassName("invoice")[0];
-  if (event.target.innerText == "continue") {
-    container.style.display = "none";
-    document.getElementsByClassName("purchase-cover")[0].style.display = "none";
-    validationHandler();
+  if (event.target.innerText === "continue") {
+    if (validateData()) {
+      container.style.display = "none";
+      document.getElementsByClassName("purchase-cover")[0].style.display = "none";
+      localStorage.removeItem('cart');
+    }
   } else {
     event.target.innerText = "continue";
     event.target.parentElement.getElementsByClassName(
@@ -294,14 +176,6 @@ function okay(event) {
 </div>`;
     container.style.height = "240px";
   }
-}
-
-function validationHandler() {
-  const validateButton = document.getElementById('btn-ok-order');
-
-  validateButton.addEventListener('click', () => {
-      this.validateData();
-  })
 }
 
 function validateData() {
@@ -330,7 +204,7 @@ function validateData() {
   localStorage.setItem('email', email.value);
   localStorage.setItem('name', name.value);
 
-  alert("Your order has been taken over by the administrator and you will be called soon.");
+ return true
 }
 
 // button components for better Ux {
@@ -383,7 +257,6 @@ function Product(product = {}) {
 
 function CartItems(cartItem = {}) {
   let { name, price, imgSrc, qty } = cartItem;
-  localStorage.setItem("CartItem", JSON.stringify(this.product - name));
   return `
   <div class='cart-item'>
     <div class='cart-img'>
@@ -407,7 +280,7 @@ function Banner() {
     <li></li>
     <li></li>
     </ul>
-    <div class='main-cart'>${DisplayProducts()}</div>
+    <div class='main-cart'>${products}</div>
     <div class='nav'>
       <button onclick='sideNav(1)'><i class='fas fa-shopping-cart' style='font-size:2rem;'></i></button>
       <span class= 'total-qty'>0</span>
@@ -480,12 +353,6 @@ function OrderConfirm() {
     <button onclick='okay(event)' id='btn-ok-order'>okay</button>`;
 }
 
-function DisplayProducts() {
-  let products = productDetails.map((product) => {
-    return Product(product);
-  });
-  return products.join("");
-}
 
 function DisplayCartItems() {
   let cartItems = cartDetails.map((cartItem) => {
@@ -520,7 +387,7 @@ function ToggleBackBtns() {
 
 function CartIsEmpty() {
   let emptyCart = `<span class='empty-cart'>Looks Like You Haven't Added Any Product In The Cart</span>`;
-  if (cartDetails.length == 0) {
+  if (cartDetails.length === 0) {
     document.getElementsByClassName("cart-items")[0].innerHTML = emptyCart;
   }
 }
@@ -538,8 +405,8 @@ function CartItemsTotal() {
 
 function Stocks() {
   cartDetails.forEach((item) => {
-    productDetails.forEach((product) => {
-      if (item.name == product.name && product.qty >= 0) {
+    productsJson.forEach((product) => {
+      if (item.name === product.name && product.qty >= 0) {
         product.qty -= item.qty;
         if (product.qty < 0) {
           product.qty += item.qty;
@@ -547,7 +414,7 @@ function Stocks() {
           document.getElementsByClassName(
             "order-details"
           )[0].innerHTML = `<em class='thanks'>Stocks Limit Exceeded</em>`;
-        } else if (product.qty == 0) {
+        } else if (product.qty === 0) {
           OutOfStock(product, 1);
         } else if (product.qty <= 5) {
           OutOfStock(product, 0);
@@ -562,7 +429,7 @@ function OutOfStock(product, handler) {
   for (let items of products) {
     let stocks = items.getElementsByClassName("stocks")[0];
     let name = items.getElementsByClassName("product-name")[0].innerText;
-    if (product.name == name) {
+    if (product.name === name) {
       if (handler) {
         items.getElementsByClassName("out-of-stock-cover")[0].style.display =
           "flex";
@@ -583,4 +450,18 @@ function App() {
 
 //}
 // injects the rendered component's html
-document.getElementById("app").innerHTML = App();
+
+let products;
+let productsJson;
+loadJSON().then(result => {
+  productsJson = result
+     products = result.map((product) => {
+      return Product(product);
+    });
+     products = products.join("");
+  document.getElementById("app").innerHTML = App();
+
+  RenderCart();
+  CartItemsTotal();
+});
+
