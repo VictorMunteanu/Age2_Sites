@@ -160,8 +160,6 @@ position: absolute;
 width: 100%;
 height: 100%;
 background: rgba(0, 0, 0, 0.75);
--webkit-backdrop-filter: blur(5px);
-backdrop-filter: blur(5px);
 display: none;
 }
 
@@ -301,7 +299,7 @@ display: none;
 .details .wrapper p {
 font-size: 0.9rem;
 padding: 5px 0;
-font-weight: light;
+font-weight: lighter;
 }
 
 .card .details .purchase {
@@ -445,18 +443,22 @@ font-weight: light;
         justify-content: space-evenly;
         align-items: baseline;
         }
+
         .btn-qty {
         border: 1px solid white;
         border-radius: 50%;
         padding: 2px 5px;
         }
+
         .btn-qty:hover {
         background: white;
         color: black;
         }
+
         .qty {
         padding: 2px 5px;
         }
+
         .invoice {
         position: absolute;
         height: 90%;
@@ -471,56 +473,68 @@ font-weight: light;
         border-radius: 20px;
         transition: 0.25s;
         }
+
         .invoice .shipping-items {
         padding: 10px 0;
         width: 100%;
         justify-content: space-between;
         }
+
         .invoice .shipping-items .item-names,
         .invoice .shipping-items .items-price {
         flex-direction: column;
         justify-content: space-around;
         }
+
         .invoice .payment {
         flex-direction: column;
         }
+
         .invoice .payment em,
         .invoice .payment div {
         margin-top: 10px;
         font-weight: 600;
         justify-content: space-between;
         }
+
         .invoice .order {
         position: absolute;
         bottom: 10%;
         width: 40%;
         justify-content: space-around;
         }
+
         .invoice .order .btn {
         padding: 1rem 2rem;
         border-radius: 10px;
         font-size: 1.2rem;
         }
+
         .invoice .order .btn-order {
         background: #00bbf9;
         }
+
         .invoice .order .btn-cancel {
         background: #bb342f;
         }
+
         .invoice .order-details {
         height: 300px;
         flex-direction: column;
         justify-content: space-around;
         }
+
         .invoice .order-details em,
         .invoice .order-details p {
         border-bottom: 1px dashed white;
         padding-bottom: 10px;
         }
+
         .invoice .order-details em {
         font-size: 1.2rem;
         font-weight: 600;
         }
+
         .invoice .order-details .thanks {
         position: absolute;
         text-align: center;
@@ -530,12 +544,15 @@ font-weight: light;
         right: 0;
         bottom: 55%;
         }
+
         .invoice .order-details p {
         font-size: 1.1rem;
         }
+
         .invoice .order-details p span {
         font-weight: 600;
         }
+
         .btn-ok, #btn-ok-order {
         position: absolute;
         width: 80%;
@@ -548,35 +565,41 @@ font-weight: light;
         right: 0;
         background: #5bc0be;
         }
+
         @media (max-width: 768px) {
         .side-nav {
         width: 80%;
         }
+
         .invoice .order {
         width: 60%;
         }
+
         .main-cart {
         overflow: scroll;
         }
         }
+
         @media (max-width: 576px) {
         .side-nav {
         width: 100%;
         }
+
         .side-nav .cart-img {
         display: none;
         }
+
         .invoice .order {
         width: 80%;
         }
+
         .nav {
         width: 576px;
         height: 4rem;
         background: rgba(255, 255, 255, 0.5);
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
         filter: invert(1);
         }
+
         .main-cart {
         justify-content: flex-start;
         flex-wrap: nowrap;
@@ -584,6 +607,7 @@ font-weight: light;
         height: 95%;
         top: 4rem;
         }
+        
         .main-cart .card {
         margin: 20px auto;
         }

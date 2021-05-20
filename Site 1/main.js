@@ -1,5 +1,4 @@
-
-const cartDetails = JSON.parse(localStorage.getItem('cart')) || [];
+const cartDetails = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addItem(event) {
   let btnClicked =
@@ -24,7 +23,7 @@ function addItem(event) {
 
   CartItems(cartItem);
   cartDetails.push(cartItem);
-  localStorage.setItem('cart', JSON.stringify(cartDetails));
+  localStorage.setItem("cart", JSON.stringify(cartDetails));
   RenderCart();
   CartItemsTotal();
 }
@@ -58,10 +57,10 @@ function clearCart() {
 }
 
 async function loadJSON() {
-  return fetch('products.json').then(response => {
-    return response.json().then(resolved => {
+  return fetch("products.json").then((response) => {
+    return response.json().then((resolved) => {
       return resolved;
-    })
+    });
   });
 }
 
@@ -149,17 +148,17 @@ function order() {
 function okay(event) {
   let container = document.getElementsByClassName("invoice")[0];
   if (event.target.innerText === "continue") {
-    if (validateData()) {
+    if (validData()) {
       container.style.display = "none";
-      document.getElementsByClassName("purchase-cover")[0].style.display = "none";
-      localStorage.removeItem('cart');
+      document.getElementsByClassName("purchase-cover")[0].style.display =
+        "none";
+      localStorage.removeItem("cart");
     }
   } else {
     event.target.innerText = "continue";
     event.target.parentElement.getElementsByClassName(
       "order-details"
-    )[0].innerHTML = 
-    `<div class="container">
+    )[0].innerHTML = `<div class="container">
     <form>
 
     <label for="email">Email</label>
@@ -178,33 +177,34 @@ function okay(event) {
   }
 }
 
-function validateData() {
+function validData() {
   const name = document.getElementById("name");
-  const phone = document.getElementById('phone');
+  const phone = document.getElementById("phone");
   const email = document.getElementById("email");
   const phoneRegexp = /^[\+373|373]*[0]*[0-9]{7,8}$/;
-  const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const emailRegexp =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-  if (!(new RegExp(/^[a-zA-Z ]{2,30}$/).test(name.value))) {
-      console.log("Wrong Name");
-      return;
+  if (!new RegExp(/^[a-zA-Z ]{2,30}$/).test(name.value)) {
+    alert("Incorrect Name");
+    return;
   }
 
-  if (!(new RegExp(phoneRegexp).test(phone.value))) {
-      console.log("Wrong Phone Number");
-      return;
+  if (!new RegExp(phoneRegexp).test(phone.value)) {
+    alert("Incorrect Phone Number");
+    return;
   }
 
-  if (!(new RegExp(emailRegexp).test(email.value))) {
-      console.log("Wrong Email");
-      return;
+  if (!new RegExp(emailRegexp).test(email.value)) {
+    alert("Incorrect Email");
+    return;
   }
 
-  localStorage.setItem('phone', phone.value);
-  localStorage.setItem('email', email.value);
-  localStorage.setItem('name', name.value);
+  localStorage.setItem("phone", phone.value);
+  localStorage.setItem("email", email.value);
+  localStorage.setItem("name", name.value);
 
- return true
+  return true;
 }
 
 // button components for better Ux {
@@ -353,7 +353,6 @@ function OrderConfirm() {
     <button onclick='okay(event)' id='btn-ok-order'>okay</button>`;
 }
 
-
 function DisplayCartItems() {
   let cartItems = cartDetails.map((cartItem) => {
     return CartItems(cartItem);
@@ -453,15 +452,14 @@ function App() {
 
 let products;
 let productsJson;
-loadJSON().then(result => {
-  productsJson = result
-     products = result.map((product) => {
-      return Product(product);
-    });
-     products = products.join("");
+loadJSON().then((result) => {
+  productsJson = result;
+  products = result.map((product) => {
+    return Product(product);
+  });
+  products = products.join("");
   document.getElementById("app").innerHTML = App();
 
   RenderCart();
   CartItemsTotal();
 });
-
